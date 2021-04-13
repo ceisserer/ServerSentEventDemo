@@ -14,7 +14,7 @@
         //Nachricht schicken: http://localhost:8080/selective/sendMessage?clientId=client2&message=hallo
 
         //const evtSource = new EventSource("http://localhost:8080/broadcast/connect?clientId="+clientId, { withCredentials: true } );
-        //const evtSource = new EventSource("http://localhost:8080/selective/connect?clientId="+clientId, { withCredentials: true } );
+        const evtSource = new EventSource("http://localhost:8080/selective/connect?clientId="+clientId, { withCredentials: true } );
         //const evtSource = new EventSource("http://localhost:8080/asyncthread/connect?clientId="+clientId, { withCredentials: true } );
 
 
