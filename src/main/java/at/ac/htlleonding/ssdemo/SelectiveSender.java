@@ -9,7 +9,8 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.sse.Sse;
 import javax.ws.rs.sse.SseEventSink;
-import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 @Path("/selective")
 public class SelectiveSender {
@@ -17,7 +18,7 @@ public class SelectiveSender {
     @Inject
     Sse sse;
 
-    HashMap<String, SseEventSink> sinkMap = new HashMap<>();
+    Map<String, SseEventSink> sinkMap = new ConcurrentHashMap<>();
 
     @Path("/connect")
     @Produces(MediaType.SERVER_SENT_EVENTS)
